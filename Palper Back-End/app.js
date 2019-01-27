@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /**
  * app.js
  *
@@ -27,10 +28,9 @@
 process.chdir(__dirname);
 
 
-
 // Attempt to import `sails` dependency, as well as `rc` (for loading `.sailsrc` files).
-var sails;
-var rc;
+let sails;
+let rc;
 try {
   sails = require('sails');
   rc = require('sails/accessible/rc');
@@ -46,8 +46,8 @@ try {
   console.error('also run this app with `sails lift`.  Running with `sails lift` will');
   console.error('not run this file (`app.js`), but it will do exactly the same thing.');
   console.error('(It even uses your app directory\'s local Sails install, if possible.)');
-  return;
-}//-•
+  // return;
+}// -•
 
 
 // Start server
