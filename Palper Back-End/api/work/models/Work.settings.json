@@ -1,0 +1,39 @@
+{
+  "connection": "default",
+  "collectionName": "work",
+  "info": {
+    "name": "work",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "containsMedia": {
+      "default": false,
+      "type": "boolean"
+    },
+    "description": {
+      "default": "",
+      "type": "text"
+    },
+    "Title": {
+      "default": "",
+      "type": "string"
+    },
+    "project": {
+      "model": "project",
+      "via": "works"
+    },
+    "work_type": {
+      "default": "",
+      "type": "enumeration",
+      "enum": [
+        "Image",
+        " Video",
+        " Prototype",
+        " Website"
+      ]
+    }
+  }
+}
