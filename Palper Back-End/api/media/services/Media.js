@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Work.js service
+ * Media.js service
  *
  * @description: A set of functions similar to controller's actions to avoid code duplication.
  */
@@ -12,21 +12,21 @@ const _ = require('lodash');
 module.exports = {
 
   /**
-   * Promise to fetch all works.
+   * Promise to fetch all media.
    *
    * @return {Promise}
    */
 
   fetchAll: (params) => {
     // Convert `params` object to filters compatible with Mongo.
-    const filters = strapi.utils.models.convertParams('work', params);
+    const filters = strapi.utils.models.convertParams('media', params);
     // Select field to populate.
-    const populate = Work.associations
+    const populate = Media.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
 
-    return Work
+    return Media
       .find()
       .where(filters.where)
       .sort(filters.sort)
@@ -36,90 +36,90 @@ module.exports = {
   },
 
   /**
-   * Promise to fetch a/an work.
+   * Promise to fetch a/an media.
    *
    * @return {Promise}
    */
 
   fetch: (params) => {
     // Select field to populate.
-    const populate = Work.associations
+    const populate = Media.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
 
-    return Work
-      .findOne(_.pick(params, _.keys(Work.schema.paths)))
+    return Media
+      .findOne(_.pick(params, _.keys(Media.schema.paths)))
       .populate(populate);
   },
 
   /**
-   * Promise to count works.
+   * Promise to count media.
    *
    * @return {Promise}
    */
 
   count: (params) => {
     // Convert `params` object to filters compatible with Mongo.
-    const filters = strapi.utils.models.convertParams('work', params);
+    const filters = strapi.utils.models.convertParams('media', params);
 
-    return Work
+    return Media
       .count()
       .where(filters.where);
   },
 
   /**
-   * Promise to add a/an work.
+   * Promise to add a/an media.
    *
    * @return {Promise}
    */
 
   add: async (values) => {
     // Extract values related to relational data.
-    const relations = _.pick(values, Work.associations.map(ast => ast.alias));
-    const data = _.omit(values, Work.associations.map(ast => ast.alias));
+    const relations = _.pick(values, Media.associations.map(ast => ast.alias));
+    const data = _.omit(values, Media.associations.map(ast => ast.alias));
 
     // Create entry with no-relational data.
-    const entry = await Work.create(data);
+    const entry = await Media.create(data);
 
     // Create relational data and return the entry.
-    return Work.updateRelations({ _id: entry.id, values: relations });
+    return Media.updateRelations({ _id: entry.id, values: relations });
   },
 
   /**
-   * Promise to edit a/an work.
+   * Promise to edit a/an media.
    *
    * @return {Promise}
    */
 
   edit: async (params, values) => {
     // Extract values related to relational data.
-    const relations = _.pick(values, Work.associations.map(a => a.alias));
-    const data = _.omit(values, Work.associations.map(a => a.alias));
+    const relations = _.pick(values, Media.associations.map(a => a.alias));
+    const data = _.omit(values, Media.associations.map(a => a.alias));
 
     // Update entry with no-relational data.
-    const entry = await Work.update(params, data, { multi: true });
+    const entry = await Media.update(params, data, { multi: true });
 
     // Update relational data and return the entry.
-    return Work.updateRelations(Object.assign(params, { values: relations }));
+    return Media.updateRelations(Object.assign(params, { values: relations }));
   },
 
   /**
-   * Promise to remove a/an work.
+   * Promise to remove a/an media.
    *
    * @return {Promise}
    */
 
   remove: async params => {
     // Select field to populate.
-    const populate = Work.associations
+    const populate = Media.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
 
     // Note: To get the full response of Mongo, use the `remove()` method
     // or add spent the parameter `{ passRawResult: true }` as second argument.
-    const data = await Work
+    const data = await Media
       .findOneAndRemove(params, {})
       .populate(populate);
 
@@ -128,7 +128,7 @@ module.exports = {
     }
 
     await Promise.all(
-      Work.associations.map(async association => {
+      Media.associations.map(async association => {
         if (!association.via || !data._id) {
           return true;
         }
@@ -149,22 +149,22 @@ module.exports = {
   },
 
   /**
-   * Promise to search a/an work.
+   * Promise to search a/an media.
    *
    * @return {Promise}
    */
 
   search: async (params) => {
     // Convert `params` object to filters compatible with Mongo.
-    const filters = strapi.utils.models.convertParams('work', params);
+    const filters = strapi.utils.models.convertParams('media', params);
     // Select field to populate.
-    const populate = Work.associations
+    const populate = Media.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
 
-    const $or = Object.keys(Work.attributes).reduce((acc, curr) => {
-      switch (Work.attributes[curr].type) {
+    const $or = Object.keys(Media.attributes).reduce((acc, curr) => {
+      switch (Media.attributes[curr].type) {
         case 'integer':
         case 'float':
         case 'decimal':
@@ -188,7 +188,7 @@ module.exports = {
       }
     }, []);
 
-    return Work
+    return Media
       .find({ $or })
       .sort(filters.sort)
       .skip(filters.start)

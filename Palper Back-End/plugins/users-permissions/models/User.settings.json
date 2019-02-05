@@ -70,8 +70,14 @@
       "type": "string"
     },
     "image_profile": {
-      "default": "",
-      "type": "json"
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "projects": {
+      "collection": "project",
+      "via": "user"
     }
   },
   "collectionName": "users-permissions_user"

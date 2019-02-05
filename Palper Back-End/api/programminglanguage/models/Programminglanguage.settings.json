@@ -1,8 +1,8 @@
 {
   "connection": "default",
-  "collectionName": "skill",
+  "collectionName": "prgramminglanguage",
   "info": {
-    "name": "skill",
+    "name": "programminglanguage",
     "description": ""
   },
   "options": {
@@ -13,9 +13,9 @@
       "default": "",
       "type": "string"
     },
-    "description": {
-      "default": "",
-      "type": "text"
+    "programmingframeworks": {
+      "collection": "programmingframework",
+      "via": "programminglanguage"
     }
   }
 }

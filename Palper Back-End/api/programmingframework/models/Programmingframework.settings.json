@@ -1,0 +1,30 @@
+{
+  "connection": "default",
+  "collectionName": "framework",
+  "info": {
+    "name": "programmingframework",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "default": "",
+      "type": "string"
+    },
+    "stack_application": {
+      "default": "",
+      "type": "enumeration",
+      "enum": [
+        "frontend",
+        " backend",
+        " fullstack"
+      ]
+    },
+    "programminglanguage": {
+      "model": "programminglanguage",
+      "via": "programmingframeworks"
+    }
+  }
+}

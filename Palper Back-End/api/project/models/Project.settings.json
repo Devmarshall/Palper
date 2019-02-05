@@ -9,17 +9,47 @@
     "timestamps": true
   },
   "attributes": {
-    "title": {
-      "default": "",
-      "type": "string"
+    "containsImage": {
+      "default": false,
+      "type": "boolean"
     },
     "description": {
       "default": "",
       "type": "text"
     },
-    "works": {
-      "collection": "work",
+    "Title": {
+      "default": "",
+      "type": "string"
+    },
+    "type": {
+      "default": "",
+      "type": "enumeration",
+      "enum": [
+        "Image",
+        " Video",
+        " Site"
+      ]
+    },
+    "containsSite": {
+      "default": false,
+      "type": "boolean"
+    },
+    "containsVideo": {
+      "default": false,
+      "type": "boolean"
+    },
+    "websites": {
+      "collection": "website",
       "via": "project"
+    },
+    "media": {
+      "collection": "media",
+      "via": "project"
+    },
+    "user": {
+      "model": "user",
+      "via": "projects",
+      "plugin": "users-permissions"
     }
   }
 }

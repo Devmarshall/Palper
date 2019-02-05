@@ -1,8 +1,8 @@
 {
   "connection": "default",
-  "collectionName": "skill",
+  "collectionName": "site",
   "info": {
-    "name": "skill",
+    "name": "website",
     "description": ""
   },
   "options": {
@@ -13,9 +13,17 @@
       "default": "",
       "type": "string"
     },
+    "url": {
+      "default": "",
+      "type": "string"
+    },
     "description": {
       "default": "",
       "type": "text"
+    },
+    "project": {
+      "model": "project",
+      "via": "websites"
     }
   }
 }

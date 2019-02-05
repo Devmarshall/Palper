@@ -2,48 +2,48 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/skills",
-      "handler": "Skill.find",
+      "path": "/media",
+      "handler": "Media.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/skills/count",
-      "handler": "Skill.count",
+      "path": "/media/count",
+      "handler": "Media.count",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/skills/:_id",
-      "handler": "Skill.findOne",
+      "path": "/media/:_id",
+      "handler": "Media.findOne",
       "config": {
         "policies": []
       }
     },
     {
       "method": "POST",
-      "path": "/skills",
-      "handler": "Skill.create",
+      "path": "/media",
+      "handler": "Media.create",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/skills/:_id",
-      "handler": "Skill.update",
+      "path": "/media/:_id",
+      "handler": "Media.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/skills/:_id",
-      "handler": "Skill.destroy",
+      "path": "/media/:_id",
+      "handler": "Media.destroy",
       "config": {
         "policies": []
       }

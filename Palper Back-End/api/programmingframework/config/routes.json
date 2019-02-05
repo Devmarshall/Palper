@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/programmingframeworks",
+      "handler": "Programmingframework.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/programmingframeworks/count",
+      "handler": "Programmingframework.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/programmingframeworks/:_id",
+      "handler": "Programmingframework.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/programmingframeworks",
+      "handler": "Programmingframework.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/programmingframeworks/:_id",
+      "handler": "Programmingframework.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/programmingframeworks/:_id",
+      "handler": "Programmingframework.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

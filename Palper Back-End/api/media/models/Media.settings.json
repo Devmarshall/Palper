@@ -1,8 +1,8 @@
 {
   "connection": "default",
-  "collectionName": "skill",
+  "collectionName": "media",
   "info": {
-    "name": "skill",
+    "name": "media",
     "description": ""
   },
   "options": {
@@ -13,9 +13,17 @@
       "default": "",
       "type": "string"
     },
-    "description": {
+    "type": {
       "default": "",
-      "type": "text"
+      "type": "enumeration",
+      "enum": [
+        "image",
+        " video"
+      ]
+    },
+    "project": {
+      "model": "project",
+      "via": "media"
     }
   }
 }
