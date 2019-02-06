@@ -9,10 +9,6 @@
     "timestamps": true
   },
   "attributes": {
-    "containsImage": {
-      "default": false,
-      "type": "boolean"
-    },
     "description": {
       "default": "",
       "type": "text"
@@ -29,14 +25,6 @@
         " Video",
         " Site"
       ]
-    },
-    "containsSite": {
-      "default": false,
-      "type": "boolean"
-    },
-    "containsVideo": {
-      "default": false,
-      "type": "boolean"
     },
     "websites": {
       "collection": "website",

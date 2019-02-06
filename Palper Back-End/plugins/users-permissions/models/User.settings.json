@@ -61,10 +61,6 @@
       "default": "",
       "type": "string"
     },
-    "phone_prefix": {
-      "default": "",
-      "type": "string"
-    },
     "phone": {
       "default": "",
       "type": "string"
@@ -78,6 +74,22 @@
     "projects": {
       "collection": "project",
       "via": "user"
+    },
+    "phoneprefix": {
+      "model": "phoneprefix",
+      "via": "users"
+    },
+    "handle_github": {
+      "default": "",
+      "type": "string"
+    },
+    "isAvailable": {
+      "default": false,
+      "type": "boolean"
+    },
+    "bio": {
+      "default": "",
+      "type": "text"
     }
   },
   "collectionName": "users-permissions_user"

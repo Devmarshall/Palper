@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/phoneprefixes",
+      "handler": "Phoneprefix.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/phoneprefixes/count",
+      "handler": "Phoneprefix.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/phoneprefixes/:_id",
+      "handler": "Phoneprefix.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/phoneprefixes",
+      "handler": "Phoneprefix.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/phoneprefixes/:_id",
+      "handler": "Phoneprefix.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/phoneprefixes/:_id",
+      "handler": "Phoneprefix.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

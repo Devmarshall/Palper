@@ -1,0 +1,26 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "phoneprefix",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "prefix": {
+      "default": "",
+      "type": "integer"
+    },
+    "country": {
+      "default": "",
+      "type": "string"
+    },
+    "users": {
+      "collection": "user",
+      "via": "phoneprefix",
+      "plugin": "users-permissions"
+    }
+  }
+}
