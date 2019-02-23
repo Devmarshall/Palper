@@ -17,7 +17,8 @@ class Content extends Component {
         <Switch>
           <Route exact path="/" component={Landing} />
         </Switch>
-      </div>);
+      </div>
+    );
   }
 }
 
