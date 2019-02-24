@@ -1,6 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import Footer from '../../components/Footer';
 
 class Landing extends Component {
   constructor(props) {
@@ -34,12 +36,15 @@ class Landing extends Component {
                       </h1>
                       <p className="lead  text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas quos perspiciatis nulla rerum corrupti quia voluptatem deleniti, et eos. Repellendus temporibus voluptate laborum dolorum sit cum vel, quo asperiores culpa.</p>
                       <div className="btn-wrapper">
-                        <a href="#" className="btn btn-info btn-icon mb-3 mb-sm-0">
-                          <span className="btn-inner--icon"><i className="fa fa-code" /></span>
-                          <span className="btn-inner--text">Login</span>
+                        <a className="btn btn-info btn-icon mb-3 mb-sm-0">
+                          <Link to="/login">
+                            <span className="btn-inner--text">Login</span>
+                          </Link>
                         </a>
                         <a href="#" className="btn btn-white btn-icon mb-3 mb-sm-0">
-                          <span className="btn-inner--text">Register</span>
+                          <Link to="/signup">
+                            <span className="btn-inner--text">Register</span>
+                          </Link>
                         </a>
                       </div>
                     </div>
@@ -169,6 +174,7 @@ class Landing extends Component {
             </div>
           </section>
         </main>
+        <Footer />
       </div>
     );
   }

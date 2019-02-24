@@ -12,7 +12,7 @@ class Header extends Component {
       <header className="header-global">
         <nav id="navbar-main" className="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom">
           <div className="container">
-            <a className="navbar-brand" href="../index.html">
+            <a className="navbar-brand" href="/">
               <img src="../assets/img/brand/white.png" alt="brand_img" />
             </a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,7 +22,7 @@ class Header extends Component {
               <div className="navbar-collapse-header">
                 <div className="row">
                   <div className="col-6 collapse-brand">
-                    <a href="../index.html">
+                    <a href="/">
                       <img src="../assets/img/brand/blue.png" alt="brand_img" />
                     </a>
                   </div>

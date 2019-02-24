@@ -1,8 +1,8 @@
 
 import React, { Component } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Header from './components/Header';
-import Footer from './components/Footer';
 import Content from './components/Content';
 import './App.css';
 
@@ -16,13 +16,14 @@ class App extends Component {
     return (
       <div>
         <div>
-          <Header />
+          <BrowserRouter>
+            <Header />
+          </BrowserRouter>
         </div>
         <div>
-          <Content />
-        </div>
-        <div>
-          <Footer />
+          <BrowserRouter>
+            <Content />
+          </BrowserRouter>
         </div>
       </div>
     );
